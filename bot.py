@@ -10,24 +10,7 @@ from PIL import Image, ImageOps
 from rembg import remove, new_session
 import telebot
 from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
-import threading
-from http.server import BaseHTTPRequestHandler, HTTPServer
 
-# یک وب‌سرور ساده که فقط برای Railway اجرا می‌شود
-def run_dummy_server():
-    port = int(os.environ.get("PORT", 8080))
-    class Handler(BaseHTTPRequestHandler):
-        def do_GET(self):
-            self.send_response(200)
-            self.end_headers()
-            self.wfile.write(b"Bot is alive")
-        def log_message(self, format, *args):
-            pass  # لاگ‌های HTTP را خاموش کن
-    server = HTTPServer(('0.0.0.0', port), Handler)
-    server.serve_forever()
-
-# اجرای وب‌سرور در یک ترد جداگانه
-threading.Thread(target=run_dummy_server, daemon=True).start()
 
 # ---------- Swin2SR (افزایش کیفیت) ----------
 try:
