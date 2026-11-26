@@ -2,6 +2,6 @@ pyTelegramBotAPI
 requests
 numpy
 Pillow
-rembg
+rembg[cpu]
 torch
 transformers
