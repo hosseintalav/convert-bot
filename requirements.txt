@@ -1,0 +1,7 @@
+pyTelegramBotAPI
+requests
+numpy
+Pillow
+rembg
+torch
+transformers
